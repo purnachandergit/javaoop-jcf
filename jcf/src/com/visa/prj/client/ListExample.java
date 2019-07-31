@@ -2,6 +2,8 @@ package com.visa.prj.client;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,20 +22,34 @@ public class ListExample {
 		products.add(new Product(88,"HP Printer",19000.00,"computer",100));
 		
 		
-		products.stream().filter(p->p.getCategory().equals("mobile")).forEach(p->System.out.println(p));
+		Map<String,List<Product>> catMap=products.stream().collect(Collectors.groupingBy(p->p.getCategory())) ;
 		
-		List<String> names=products.stream().map(p->p.getName()).collect(Collectors.toList());
-		for (String string : names) {
+		Set<String> keys=catMap.keySet();
+		for (String string : keys) {
 			System.out.println(string);
+			List<Product> prds=catMap.get(string);
+			prds.forEach(System.out::println);
 		}
 		
-		double total=products.stream().map(p->p.getPrice()).reduce(0.0,(v1,v2)->v1+v2);
-		System.out.println(total);
+		catMap.forEach((k,v)->{
+			System.out.println(k);
+			v.forEach(System.out::println);
+		});
 		
-		products.stream().map(p->p.getPrice()).forEach(System.out::println);
-		
-		
-		
+//		products.stream().filter(p->p.getCategory().equals("mobile")).forEach(p->System.out.println(p));
+//		
+//		List<String> names=products.stream().map(p->p.getName()).collect(Collectors.toList());
+//		for (String string : names) {
+//			System.out.println(string);
+//		}
+//		
+//		double total=products.stream().map(p->p.getPrice()).reduce(0.0,(v1,v2)->v1+v2);
+//		System.out.println(total);
+//		
+//		products.stream().map(p->p.getPrice()).forEach(System.out::println);
+//		
+//		
+//		
 		
 		
 		

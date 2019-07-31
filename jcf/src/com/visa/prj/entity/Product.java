@@ -74,7 +74,7 @@ public class Product implements Comparable<Product>{
 
 	@Override
 	public int hashCode() {
-		System.out.println("Called");
+		//System.out.println("Called");
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
