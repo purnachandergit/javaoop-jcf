@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +20,11 @@ public class ProductDaoJpaImpl implements ProductDao {
 	@Override
 	public List<Product> getProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		String jpql="from Product"; //select p from Product p ,here Product is a class not table since jpql uses query with classes
+		//jpql is fine till there is bulk updates
+		TypedQuery<Product> query=em.createQuery(jpql,Product.class);
+				
+		return query.getResultList();
 	}
 
 	@Override
