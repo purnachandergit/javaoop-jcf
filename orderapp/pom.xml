@@ -66,8 +66,9 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Jackson JSON Processor -->
+ 
+       <!-- Jackson JSON Processor -->
+       <!--  
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -88,8 +89,8 @@
             <groupId>org.springframework.hateoas</groupId>
             <artifactId>spring-hateoas</artifactId>
             <version>0.16.0.RELEASE</version>
-        </dependency>
-
+        </dependency> -->
+        
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -146,9 +147,10 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.7.v20160115</version>
+               <!--  <version>9.3.7.v20160115</version> -->
+                <version>9.4.12.v20180830</version>
             </plugin>
-
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

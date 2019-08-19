@@ -3,7 +3,8 @@ package com.visa.prj.service;
 import java.util.Date;
 import java.util.List;
 
-import javax.transaction.Transactional;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,13 @@ public class BookingService {
 	
 	public void makeBooking(User u, Hotel h, Date checkin, Date checkout, Boolean smoking, int no_of_beds) {
 		 
+	}
+	public void bookHotels(HttpServletRequest req)
+	{
+		HttpSession ses=req.getSession();
+		User u=new User();
+	    
+		
 	}
 
 }
