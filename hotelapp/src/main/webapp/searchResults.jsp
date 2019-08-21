@@ -11,11 +11,11 @@
 </head>
 <body>
 <h1>Hotel Search Results</h1>
-<p><a id="changeSearchLink"
+<%-- <p><a id="changeSearchLink"
 	href="search.do?searchString=${searchCriteria.searchString}&pageSize=${searchCriteria.pageSize}">Change
-Search</a></p>
-<div id="hotelResults">
-<c:if test="${not empty hotelList}">
+Search</a></p> --%>
+<%-- <div id="hotelResults">
+<c:if test="${not empty hotelList}"> --%>
 	<table class="summary">
 		<thead>
 			<tr>
@@ -43,7 +43,7 @@ Search</a></p>
 			</c:if>
 		</tbody>
 	</table>
-	<div class="buttonGroup">
+	<%-- <div class="buttonGroup">
 	<div class="span-3"><c:if test="${searchCriteria.page > 0}">
 		<a id="prevResultsLink"
 			href="hotels?searchString=${searchCriteria.searchString}&pageSize=${searchCriteria.pageSize}&page=${searchCriteria.page - 1}">Previous
@@ -58,7 +58,7 @@ Search</a></p>
 
 	</c:if></div>
 	</div>
-</c:if></div>
+</c:if></div> --%>
 
 
 </body>

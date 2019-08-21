@@ -5,7 +5,11 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,13 +28,14 @@ public class Booking implements Serializable {
 			.getDateInstance(DateFormat.MEDIUM);
  
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL ,fetch=FetchType.EAGER)
 	@JoinColumn(name="uname")
 	private User user;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL ,fetch=FetchType.EAGER)
 	@JoinColumn(name="hname")
 	private Hotel hotel;
 

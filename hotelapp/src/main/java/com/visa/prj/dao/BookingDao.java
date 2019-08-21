@@ -38,11 +38,13 @@ public interface BookingDao {
 	 * @param booking
 	 * @return bookingId [ confirmation ]
 	 */
-	public long createBooking(Booking booking);
+	public void createBooking(Booking booking);
 	/**
 	 * 
 	 * @param user
 	 * @return all bookings of the login user
 	 */
 	public List<Booking> getAllBookingsOfUser(User user);
+	
+	public User fetchUser(String email);
 }

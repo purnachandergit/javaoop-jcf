@@ -13,6 +13,7 @@
     <h1>Welcome to Hotel booking application</h1>
     <p>
         <a href="search.do">Search hotels</a>
+        <a href="listBookings.do">Find Bookings</a>
     </p>
 </div>
 

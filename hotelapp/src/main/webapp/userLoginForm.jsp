@@ -14,12 +14,13 @@
 
 <h1>Login</h1>
 
-<form:form modelAttribute="booking" action="login.action"
+<form:form modelAttribute="booking" action="login.do"
 	cssClass="inline" method="get">
 
 
 	<fieldset><span class="errors span-18"> <form:errors
 		path="*" /> </span>
+	
 	<table>
 		<tr>
 			<td><label for="user.email">Email:</label></td>
