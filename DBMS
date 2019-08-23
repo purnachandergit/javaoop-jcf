@@ -1,0 +1,7 @@
+use visa;
+        drop table product;
+
+        create table products (id int PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), price double, category VARCHAR(100), count int);
+
+        insert into products values(0, 'iPhone XR', 59000.00, 'mobile', 1000);
+        insert into products values(0, 'Sony Bravia', 139000.00, 'tv', 1000);

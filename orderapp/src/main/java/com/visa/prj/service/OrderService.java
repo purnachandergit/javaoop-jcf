@@ -84,6 +84,7 @@ public class OrderService {
 		HttpSession ses=req.getSession();
 		Customer c=new Customer();
 		c.setEmail(ses.getAttribute("user").toString());
+		order.setCustomer(c);
 		placeOrder(order);
     }
 }
